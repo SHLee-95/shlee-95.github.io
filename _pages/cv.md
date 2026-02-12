@@ -28,6 +28,16 @@ Skills
   * Sub-skill 2.3
 * Skill 3
 
+
+
+Languages
+======
+* Korean (Native)
+* English (Advanced)
+* Japanese (Intermediate)
+* Chinese (Mandarin, Elemtentary)
+
+
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
