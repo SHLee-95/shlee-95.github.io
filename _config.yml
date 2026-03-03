@@ -23,7 +23,7 @@ repository               : "shlee-95/shlee-95.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "Basic Profile"
+  avatar           : "/images/IMG_9820.JPG"
   name             : "Lee, Sang Hun"
   pronouns         : "He/Him/His"
   bio              : "PhD Student in Political Science"
