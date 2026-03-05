@@ -18,7 +18,7 @@ Education
 * M.A., Political Science, Sungkyunkwan University, Seoul, South Korea, 2022
 * B.P.S., International Relations, Kyonggi University, Suwon, South Korea, 2019<sup>1</sup>
 
-<sup>1</sup> B.P.S. = Bachelor of Political Science.
+<p style="font-size:0.85em;"><sup>1</sup> B.P.S. = Bachelor of Political Science.</p>
 
 Awards and Scholarships
 ======
@@ -35,8 +35,10 @@ Awards and Scholarships
   * Academic Excellence Scholarship Type A (Mar 2015)<sup>3</sup>
   * Academic Excellence Scholarship Type A (Sep 2014)<sup>3</sup>
 
-<sup>2</sup> Academic Excellence Scholarship Type C — covers 30% of tuition.  
-<sup>3</sup> Academic Excellence Scholarship Type A — full-tuition scholarship.
+<p style="font-size:0.85em;"><sup>2</sup> Academic Excellence Scholarship Type C — covers 30% of tuition.</p>
+
+<p style="font-size:0.85em;"><sup>3</sup> Academic Excellence Scholarship Type A — full-tuition scholarship.</p>
+
 
 Work experience
 ======
