@@ -14,9 +14,25 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Political Science, University at Buffalo, State University of New York (In Progress, Expected Completion: 2029)
-* M.A. in Political Science, Sungkyunkwan University, 2022
-* B.P.S. in International Relations, Kyonggi University, 2019
+* Ph.D in Political Science, University at Buffalo, State University of New York, Buffalo, NY, USA. 2024 - Present (Expected Completion: 2029)
+* M.A. in Political Science, Sungkyunkwan University, Seoul, Korea. 2022
+* B.P.S. in International Relations (Minor in International Trade), Kyonggi University, Suwon, Korea. 2019
+
+
+Awards and Scholarships
+======
+* University at Buffalo, SUNY
+  * Graduate School Scholarship (Aug 2024 - Present)
+
+* Sungkyunkwan University
+  * Graduate Merit Scholarship (Sep 2019 - Aug 2021)
+ 
+* Kyonggi University
+  * Academic Excellence Scholarship Type C (30% of tuition funded) Mar 2017
+  * Academic Excellence Scholarship Type C (30% of tuition funded) Mar 2016
+  * Academic Excellence Scholarship Type A (Fully funded) Mar 2015
+  * Academic Excellence Scholarship Type A (Fully Funded) Sep 2014
+
 
 Work experience
 ======
@@ -53,7 +69,7 @@ Talks
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
+Teaching experience
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
