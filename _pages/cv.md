@@ -16,27 +16,27 @@ Education
 ======
 * Ph.D., Political Science, University at Buffalo, State University of New York, Buffalo, NY, expected 2029
 * M.A., Political Science, Sungkyunkwan University, Seoul, South Korea, 2022
-* B.P.S.[^1], International Relations, Kyonggi University, Suwon, South Korea, 2019
+* B.P.S., International Relations, Kyonggi University, Suwon, South Korea, 2019<sup>1</sup>
 
-[^1]: B.P.S. = Bachelor of Political Science
+<sup>1</sup> B.P.S. = Bachelor of Political Science.
 
 Awards and Scholarships
 ======
+
 * University at Buffalo, SUNY
-  * Graduate School Scholarship (Aug 2024 - Present)
+  * Graduate School Scholarship (Aug 2024–present)
 
 * Sungkyunkwan University
-  * Graduate Merit Scholarship (Sep 2019 - Aug 2021)
+  * Graduate Merit Scholarship (Sep 2019–Aug 2021)
  
 * Kyonggi University
-  * Academic Excellence Scholarship Type C[^2] (Mar 2017)
-  * Academic Excellence Scholarship Type C[^2] (Mar 2016)
-  * Academic Excellence Scholarship Type A[^3] (Mar 2015)
-  * Academic Excellence Scholarship Type A[^3] (Sep 2014)
+  * Academic Excellence Scholarship Type C (Mar 2017)<sup>2</sup>
+  * Academic Excellence Scholarship Type C (Mar 2016)<sup>2</sup>
+  * Academic Excellence Scholarship Type A (Mar 2015)<sup>3</sup>
+  * Academic Excellence Scholarship Type A (Sep 2014)<sup>3</sup>
 
-[^2]: Academic Excellence Scholarship Type C — merit-based scholarship covering approximately 30% of tuition.
-
-[^3]: Academic Excellence Scholarship Type A — merit-based scholarship covering full tuition.
+<sup>2</sup> Academic Excellence Scholarship Type C — covers 30% of tuition.  
+<sup>3</sup> Academic Excellence Scholarship Type A — full-tuition scholarship.
 
 Work experience
 ======
