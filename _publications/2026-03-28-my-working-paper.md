@@ -1,7 +1,7 @@
 ---
 title: "Pro Patria et America?"
 collection: publications
-category: working_papers
+category: working
 permalink: 
 excerpt: 'This is a working paper.'
 date: 2024-02-17
