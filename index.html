@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sang Hun Lee — Political Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:    #F6F2EA;
+      --navy:     #182240;
+      --navy-mid: #243160;
+      --gold:     #B8893A;
+      --gold-lt:  #D4A85A;
+      --muted:    #6B6760;
+      --border:   #DDD8CE;
+      --white:    #FDFBF7;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ivory);
+      color: var(--navy);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem;
+      height: 56px;
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: .04em;
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex; gap: 2.2rem; list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(246,242,234,.65);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-lt); }
+
+    /* ── HERO ───────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      min-height: 100vh;
+      padding-top: 56px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--navy);
+      padding: 4rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+    }
+
+    .avatar-wrap {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--gold);
+      flex-shrink: 0;
+    }
+
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--ivory);
+      line-height: 1.25;
+    }
+
+    .sidebar-title {
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-top: .3rem;
+    }
+
+    .sidebar-divider {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      opacity: .5;
+    }
+
+    .sidebar-info { display: flex; flex-direction: column; gap: .65rem; }
+
+    .info-item {
+      display: flex; align-items: flex-start; gap: .75rem;
+      color: rgba(246,242,234,.7);
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+
+    .info-icon {
+      width: 17px; flex-shrink: 0; margin-top: .1rem;
+      opacity: .6;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: .6rem; }
+
+    .contact-link {
+      display: flex; align-items: center; gap: .7rem;
+      color: rgba(246,242,234,.65);
+      text-decoration: none;
+      font-size: .95rem;
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+
+    .contact-link:hover { color: var(--gold-lt); }
+
+    .contact-link svg { width: 16px; opacity: .7; }
+
+    .sidebar-section-label {
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(246,242,234,.3);
+      margin-bottom: .5rem;
+    }
+
+    /* Main content */
+    .main {
+      padding: 5rem 5rem 5rem 5.5rem;
+      max-width: 760px;
+    }
+
+    .section { margin-bottom: 5rem; opacity: 0; transform: translateY(18px); }
+    .section.visible { animation: fadeUp .6s ease forwards; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section:nth-child(1) { animation-delay: .05s; }
+    .section:nth-child(2) { animation-delay: .15s; }
+    .section:nth-child(3) { animation-delay: .25s; }
+    .section:nth-child(4) { animation-delay: .35s; }
+
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 1.8rem;
+    }
+
+    p {
+      color: #3D3A35;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      max-width: 640px;
+    }
+
+    .intro-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--navy);
+      max-width: 660px;
+      margin-bottom: 1rem;
+    }
+
+    p + p { margin-top: 1.2rem; }
+
+    /* Education & Presentations */
+    .edu-list { display: flex; flex-direction: column; gap: 2.5rem; margin-top: .5rem; }
+
+    .edu-item {
+      display: grid;
+      grid-template-columns: 12px 1fr;
+      gap: 1.4rem;
+      align-items: start;
+    }
+
+    .edu-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: .5rem;
+      flex-shrink: 0;
+    }
+
+    .edu-degree {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    .edu-school {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-top: .4rem;
+      line-height: 1.6;
+    }
+
+    /* Publications placeholder */
+    .pub-placeholder {
+      border: 1px dashed var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* CV button */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 2rem;
+      padding: .85rem 1.8rem;
+      background: var(--navy);
+      color: var(--ivory);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: background .2s;
+    }
+
+    .btn:hover { background: var(--navy-mid); }
+
+    .btn svg { width: 14px; }
+
+    /* Horizontal rule */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      padding: 2rem 5.5rem;
+      font-size: .75rem;
+      color: rgba(246,242,234,.35);
+      letter-spacing: .06em;
+    }
+
+    /* ── ACCESSIBILITY TOGGLE ─────────────────── */
+    .a11y-btn {
+      background: transparent;
+      border: 1px solid rgba(246,242,234,.3);
+      color: rgba(246,242,234,.7);
+      padding: .35rem .9rem;
+      font-family: 'Jost', sans-serif;
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .2s;
+      margin-left: 2rem;
+      flex-shrink: 0;
+    }
+
+    .a11y-btn:hover {
+      background: rgba(246,242,234,.1);
+      color: var(--gold-lt);
+      border-color: var(--gold-lt);
+    }
+
+    /* ── ACCESSIBILITY MODE ─────────────────── */
+    body.a11y {
+      background: #fff;
+      color: #111;
+      font-size: 130%;
+    }
+
+    body.a11y nav { background: #1a1a1a; border-bottom: 3px solid #1a1a1a; }
+    body.a11y .nav-brand { color: #fff; font-size: 1.4rem; }
+    body.a11y .nav-links a { color: rgba(255,255,255,.85); font-size: 1rem; }
+    body.a11y .nav-links a:hover { color: #fff; }
+    body.a11y .a11y-btn { border-color: rgba(255,255,255,.5); color: rgba(255,255,255,.8); font-size: .9rem; }
+
+    body.a11y .sidebar {
+      background: #1a1a1a;
+      border-right: 3px solid #333;
+    }
+
+    body.a11y .sidebar-name { color: #fff; font-size: 2.4rem; }
+    body.a11y .avatar-wrap { border-color: #fff; width: 160px; height: 160px; }
+    body.a11y .info-item { color: #ccc; font-size: 1.2rem; line-height: 1.7; }
+    body.a11y .contact-link { color: #ccc; font-size: 1.2rem; }
+    body.a11y .contact-link:hover { color: #fff; }
+    body.a11y .sidebar-section-label { color: #777; font-size: 1rem; }
+    body.a11y .sidebar-divider { background: #555; opacity: 1; width: 60px; }
+
+    body.a11y .main { background: #fff; }
+
+    body.a11y .section-label {
+      color: #111;
+      font-size: 2.8rem;
+      border-bottom: 3px solid #111;
+      padding-bottom: .5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    body.a11y .intro-text {
+      color: #111;
+      font-size: 1.8rem;
+      line-height: 2;
+    }
+
+    body.a11y p {
+      color: #222;
+      font-size: 1.4rem;
+      line-height: 2.1;
+    }
+
+    body.a11y p[style] {
+      color: #111 !important;
+      font-size: 1.4rem !important;
+      font-weight: 500 !important;
+      line-height: 2 !important;
+    }
+
+    body.a11y .edu-degree { color: #111; font-size: 1.7rem; line-height: 1.5; }
+    body.a11y .edu-school { color: #444; font-size: 1.3rem; margin-top: .5rem; }
+    body.a11y .edu-dot { background: #111; width: 14px; height: 14px; margin-top: .6rem; }
+    body.a11y .edu-list { gap: 3rem; }
+
+    body.a11y hr { border-color: #ddd; }
+
+    body.a11y .pub-placeholder {
+      border: 2px dashed #aaa;
+      color: #333;
+      font-size: 1.3rem;
+      line-height: 2;
+    }
+
+    body.a11y .pub-placeholder a { color: #0057b7 !important; text-decoration: underline !important; }
+
+    body.a11y .btn {
+      background: #111;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 1.1rem 2.2rem;
+      border: 2px solid #111;
+    }
+
+    body.a11y .btn:hover { background: #333; }
+
+    body.a11y footer {
+      background: #1a1a1a;
+      color: #888;
+      font-size: 1rem;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+
+    /* Fluid font sizes using clamp */
+    .section-label    { font-size: clamp(1.4rem, 3.5vw, 2rem); }
+    .intro-text       { font-size: clamp(1.15rem, 2.5vw, 1.5rem); }
+    p                 { font-size: clamp(1rem, 1.8vw, 1.1rem); }
+    .edu-degree       { font-size: clamp(1.15rem, 2.2vw, 1.45rem); }
+    .edu-school       { font-size: clamp(.95rem, 1.8vw, 1.1rem); }
+    .pub-placeholder  { font-size: clamp(.95rem, 1.8vw, 1.1rem); }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 280px 1fr; }
+      .main { padding: 4rem 3rem 4rem 3.5rem; max-width: 100%; }
+    }
+
+    /* Mobile landscape / small tablet */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        padding: 2.5rem 1.8rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .avatar-wrap { width: 90px; height: 90px; }
+
+      .sidebar-name { font-size: 1.4rem; }
+
+      .sidebar-info,
+      .contact-links { flex: 1 1 180px; }
+
+      .sidebar-divider { display: none; }
+
+      .main {
+        padding: 2.5rem 1.5rem;
+        max-width: 100%;
+      }
+
+      nav {
+        padding: 0 1.2rem;
+        height: auto;
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+      }
+
+      .nav-links {
+        gap: .9rem;
+        flex-wrap: wrap;
+        order: 3;
+        width: 100%;
+        padding-bottom: .4rem;
+      }
+
+      .nav-links a { font-size: .7rem; }
+      .a11y-btn { margin-left: auto; }
+
+      .hero { padding-top: 80px; }
+
+      .section-label { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+      .intro-text    { font-size: clamp(1.1rem, 4vw, 1.35rem); }
+      p              { font-size: clamp(.95rem, 3.5vw, 1.05rem); }
+      .edu-degree    { font-size: clamp(1.05rem, 3.5vw, 1.25rem); }
+      .edu-school    { font-size: clamp(.9rem, 3vw, 1rem); }
+
+      .interest-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Mobile portrait */
+    @media (max-width: 480px) {
+      .sidebar { padding: 2rem 1.2rem; }
+      .main { padding: 2rem 1.2rem; }
+
+      .nav-links a { font-size: .65rem; letter-spacing: .06em; }
+      .nav-brand { font-size: .95rem; }
+
+      .section-label { font-size: 1.4rem; }
+      .intro-text    { font-size: 1.1rem; }
+      p              { font-size: 1rem; }
+      .edu-degree    { font-size: 1.1rem; }
+      .edu-school    { font-size: .95rem; }
+
+      .edu-list { gap: 1.8rem; }
+      .section  { margin-bottom: 3rem; }
+      hr        { margin-bottom: 3rem; }
+    }
+
+    /* Word breaking to prevent overflow */
+    p, .intro-text, .edu-degree, .edu-school, .pub-placeholder {
+      word-break: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-brand">Sang Hun Lee</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#presentations">Presentations</a></li>
+      <li><a href="mailto:slee275@buffalo.edu">Contact</a></li>
+    </ul>
+    <button class="a11y-btn" onclick="toggleA11y()" aria-label="Toggle accessibility mode">⬤ Accessibility</button>
+  </nav>
+
+  <!-- HERO GRID -->
+  <div class="hero">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="avatar-wrap">
+        <img src="https://shlee-95.github.io/images/IMG_9820.JPG" alt="Sang Hun Lee" />
+      </div>
+
+      <div>
+        <div class="sidebar-name">Sang Hun<br>Lee</div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-info">
+        <p class="sidebar-section-label">Affiliation</p>
+        <div class="info-item">
+          <svg class="info-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21C12 21 4 13.5 4 8.5a8 8 0 1116 0c0 5-8 12.5-8 12.5z"/>
+            <circle cx="12" cy="8.5" r="2.5" stroke-linecap="round" stroke-width="1.5"/>
+          </svg>
+          University at Buffalo, SUNY<br>Buffalo, NY, USA
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="contact-links">
+        <p class="sidebar-section-label">Connect</p>
+
+        <a href="mailto:slee275@buffalo.edu" class="contact-link">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l9 6 9-6M3 8h18v12H3V8z"/>
+          </svg>
+          slee275@buffalo.edu
+        </a>
+
+        <a href="https://orcid.org/0009-0009-5538-2935" class="contact-link" target="_blank">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-width="1.5" d="M9 7h1.5M9 12h4M9 17h4"/>
+          </svg>
+          ORCID
+        </a>
+
+        <a href="https://www.linkedin.com/in/sang-hun-lee95" class="contact-link" target="_blank">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
+            <path stroke-linecap="round" stroke-width="1.5" d="M8 11v5M8 8v.5M12 16v-5m0 0c0-1.5 1-2 2-2s2 .5 2 2v5"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <a href="https://twitter.com/SHLee_Political" class="contact-link" target="_blank">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4l16 16M4 20L20 4"/>
+          </svg>
+          X / Twitter
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- About -->
+      <section id="about" class="section">
+        <p class="section-label">Introduction</p>
+        <p class="intro-text">I am a PhD student in Political Science at the University at Buffalo (SUNY).</p>
+        <p class="intro-text">My main research interests are: International Relations, Civil-Military Relations, Conflicts, and Foreign Policy Analysis.</p>
+        <p class="intro-text">I am always happy to discuss research, ideas, or potential collaborations.</p>
+        <a href="files/cv.pdf" class="btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          </svg>
+          Download CV
+        </a>
+      </section>
+
+      <hr>
+
+      <!-- Research -->
+      <section id="research" class="section">
+        <p class="section-label">Research Interests</p>
+        <p style="font-size:1.2rem; color:var(--navy); line-height:2; font-weight:400;">International Relations · Civil-Military Relations · Conflict Processes · Foreign Policy Analysis</p>
+      </section>
+
+      <hr>
+
+      <!-- Education -->
+      <section id="education" class="section">
+        <p class="section-label">Education</p>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <div class="edu-degree">Ph.D. in Political Science <span style="font-weight:300;color:var(--muted)">· In Progress</span></div>
+              <div class="edu-school">University at Buffalo, State University of New York · Buffalo, NY</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <div class="edu-degree">M.A. in Political Science</div>
+              <div class="edu-school">Sungkyunkwan University · Seoul, South Korea</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <!-- Publications -->
+      <section id="publications" class="section">
+        <p class="section-label">Publications</p>
+        <div class="pub-placeholder">
+          Working papers and publications forthcoming.<br>
+          Please <a href="mailto:slee275@buffalo.edu" style="color:var(--gold);text-decoration:none;">reach out by email</a> for drafts or current projects.
+        </div>
+      </section>
+
+      <hr>
+
+      <!-- Presentations -->
+      <section id="presentations" class="section">
+        <p class="section-label">Presentations</p>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div>
+              <div class="edu-degree">"To be or not to be: North Korea's Restrained Retaliation of Game-Theoretic Model of Rubbish Balloon"</div>
+              <div class="edu-school">International Studies Association 2026 Annual Convention · Columbus, OH · 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Sang Hun Lee &nbsp;·&nbsp; University at Buffalo, SUNY &nbsp;·&nbsp; Department of Political Science
+  </footer>
+
+  <script>
+    // Accessibility toggle
+    function toggleA11y() {
+      const on = document.body.classList.toggle('a11y');
+      document.querySelector('.a11y-btn').textContent = on ? '⬤ Standard' : '⬤ Accessible';
+      localStorage.setItem('a11y', on ? '1' : '');
+    }
+    if (localStorage.getItem('a11y')) {
+      document.body.classList.add('a11y');
+      document.querySelector('.a11y-btn').textContent = '⬤ Standard';
+    }
+
+    // Fade-in on scroll
+    const sections = document.querySelectorAll('.section');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    sections.forEach(s => io.observe(s));
+
+    // Nav active link highlight
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sectionEls = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sectionEls.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current
+          ? 'var(--gold-lt)'
+          : '';
+      });
+    });
+  </script>
+</body>
+</html>
