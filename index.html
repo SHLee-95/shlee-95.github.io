@@ -128,12 +128,12 @@
     .info-item {
       display: flex; align-items: flex-start; gap: .75rem;
       color: rgba(246,242,234,.7);
-      font-size: .95rem;
+      font-size: clamp(.78rem, 1.1vw, .95rem);
       line-height: 1.5;
     }
 
     .info-icon {
-      width: 17px; flex-shrink: 0; margin-top: .1rem;
+      width: clamp(14px, 1.4vw, 17px); flex-shrink: 0; margin-top: .1rem;
       opacity: .6;
     }
 
@@ -143,17 +143,17 @@
       display: flex; align-items: center; gap: .7rem;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: .95rem;
+      font-size: clamp(.78rem, 1.1vw, .95rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
 
     .contact-link:hover { color: var(--gold-lt); }
 
-    .contact-link svg { width: 16px; opacity: .7; }
+    .contact-link svg { width: clamp(13px, 1.3vw, 16px); opacity: .7; }
 
     .sidebar-section-label {
-      font-size: .75rem;
+      font-size: clamp(.62rem, .9vw, .75rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
