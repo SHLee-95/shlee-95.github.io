@@ -263,9 +263,9 @@
     }
     .pub-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem; font-weight: 500; color: var(--navy); line-height: 1.45;
+      font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 500; color: var(--navy); line-height: 1.45;
     }
-    .pub-meta { font-size: .95rem; color: var(--muted); margin-top: .35rem; line-height: 1.6; }
+    .pub-meta { font-size: clamp(.95rem, 1.5vw, 1.1rem); color: var(--muted); margin-top: .35rem; line-height: 1.6; }
     .pub-links { display: flex; gap: 1rem; margin-top: .6rem; }
     .pub-link {
       font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
@@ -425,12 +425,12 @@
     /* ── RESPONSIVE ─────────────────────────── */
 
     /* All font sizes scale fluidly with viewport — no breakpoints needed */
-    .section-label { font-size: clamp(1.3rem, 3.5vw, 2rem); }
-    .intro-text    { font-size: clamp(1.05rem, 2.5vw, 1.5rem); }
-    p              { font-size: clamp(.95rem, 1.8vw, 1.1rem); }
-    .edu-degree    { font-size: clamp(1.05rem, 2.2vw, 1.45rem); }
-    .edu-school    { font-size: clamp(.9rem, 1.8vw, 1.1rem); }
-    .pub-placeholder { font-size: clamp(.9rem, 1.8vw, 1.1rem); }
+    .section-label { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+    .intro-text    { font-size: clamp(1.2rem, 2.5vw, 1.65rem); }
+    p              { font-size: clamp(1.05rem, 1.8vw, 1.2rem); }
+    .edu-degree    { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+    .edu-school    { font-size: clamp(1rem, 1.8vw, 1.2rem); }
+    .pub-placeholder { font-size: clamp(1rem, 1.8vw, 1.2rem); }
     .section       { margin-bottom: clamp(3rem, 6vw, 5rem); }
     hr             { margin-bottom: clamp(3rem, 6vw, 5rem); }
     .edu-list      { gap: clamp(1.5rem, 3vw, 2.5rem); }
