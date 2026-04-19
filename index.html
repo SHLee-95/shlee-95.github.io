@@ -74,24 +74,23 @@
       padding-top: 56px;
     }
 
-    /* Sidebar — container-type lets child elements scale via cqi (% of sidebar width) */
+    /* Sidebar */
     .sidebar {
-      container-type: inline-size;
       background: var(--navy);
-      padding: 8cqi 7cqi;
+      padding: clamp(1.5rem, 4.5vw, 3.5rem) clamp(1rem, 2.5vw, 2.2rem);
       display: flex;
       flex-direction: column;
-      gap: 5cqi;
+      gap: clamp(1rem, 2vw, 1.8rem);
       position: sticky;
       top: 56px;
       height: calc(100vh - 56px);
       overflow-y: auto;
     }
 
-    /* Avatar: 55% of sidebar width, naturally larger on wide screens */
+    /* Avatar scales with sidebar width (sidebar ≈ 27vw, avatar ≈ 55% of that) */
     .avatar-wrap {
-      width: min(55cqi, 170px);
-      height: min(55cqi, 170px);
+      width: clamp(110px, 15vw, 170px);
+      height: clamp(110px, 15vw, 170px);
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--gold);
@@ -102,14 +101,14 @@
 
     .sidebar-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: min(7.5cqi, 1.7rem);
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
       font-weight: 500;
       color: var(--ivory);
       line-height: 1.25;
     }
 
     .sidebar-title {
-      font-size: min(3.5cqi, .8rem);
+      font-size: .8rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold-lt);
@@ -117,46 +116,46 @@
     }
 
     .sidebar-divider {
-      width: 12cqi; height: 1px;
+      width: 40px; height: 1px;
       background: var(--gold);
       opacity: .5;
     }
 
-    .sidebar-info { display: flex; flex-direction: column; gap: 2cqi; }
+    .sidebar-info { display: flex; flex-direction: column; gap: .65rem; }
 
     .info-item {
-      display: flex; align-items: flex-start; gap: 3cqi;
+      display: flex; align-items: flex-start; gap: .75rem;
       color: rgba(246,242,234,.7);
-      font-size: min(6cqi, 1.05rem);
+      font-size: clamp(1rem, 1.4vw, 1.1rem);
       line-height: 1.5;
     }
 
     .info-icon {
-      width: min(5cqi, 18px); flex-shrink: 0; margin-top: .1rem;
+      width: 17px; flex-shrink: 0; margin-top: .1rem;
       opacity: .6;
     }
 
-    .contact-links { display: flex; flex-direction: column; gap: 2cqi; }
+    .contact-links { display: flex; flex-direction: column; gap: .6rem; }
 
     .contact-link {
-      display: flex; align-items: center; gap: 3cqi;
+      display: flex; align-items: center; gap: .7rem;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: min(6cqi, 1.05rem);
+      font-size: clamp(1rem, 1.4vw, 1.1rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
 
     .contact-link:hover { color: var(--gold-lt); }
 
-    .contact-link svg { width: min(5cqi, 18px); opacity: .7; }
+    .contact-link svg { width: 17px; opacity: .7; }
 
     .sidebar-section-label {
-      font-size: min(4cqi, .82rem);
+      font-size: clamp(.7rem, 1vw, .82rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
-      margin-bottom: 1.5cqi;
+      margin-bottom: .5rem;
     }
 
     /* Main content */
@@ -324,7 +323,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all .2s;
-      margin-left: auto;
+      margin-left: 2rem;
       flex-shrink: 0;
     }
 
