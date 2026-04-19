@@ -36,7 +36,8 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: var(--navy);
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center;
+      gap: 2.5rem;
       padding: 0 3rem;
       height: 56px;
     }
@@ -44,14 +45,14 @@
     .nav-brand {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 500;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       letter-spacing: .04em;
       color: var(--ivory);
       text-decoration: none;
     }
 
     .nav-links {
-      display: flex; gap: 2.2rem; list-style: none;
+      display: flex; gap: 2rem; list-style: none;
     }
 
     .nav-links a {
@@ -77,20 +78,19 @@
     /* Sidebar */
     .sidebar {
       background: var(--navy);
-      padding: clamp(1.5rem, 4.5vw, 3.5rem) clamp(1rem, 2.5vw, 2.2rem);
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.2rem, 3vw, 2.8rem);
       display: flex;
       flex-direction: column;
-      gap: clamp(1rem, 2vw, 1.8rem);
+      gap: clamp(1.4rem, 2.5vw, 2.2rem);
       position: sticky;
       top: 56px;
       height: calc(100vh - 56px);
       overflow-y: auto;
     }
 
-    /* Avatar scales with sidebar width (sidebar ≈ 27vw, avatar ≈ 55% of that) */
     .avatar-wrap {
-      width: clamp(110px, 15vw, 170px);
-      height: clamp(110px, 15vw, 170px);
+      width: clamp(140px, 19vw, 210px);
+      height: clamp(140px, 19vw, 210px);
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--gold);
@@ -101,14 +101,14 @@
 
     .sidebar-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-size: clamp(1.5rem, 2.3vw, 2rem);
       font-weight: 500;
       color: var(--ivory);
       line-height: 1.25;
     }
 
     .sidebar-title {
-      font-size: .8rem;
+      font-size: .85rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold-lt);
@@ -121,37 +121,37 @@
       opacity: .5;
     }
 
-    .sidebar-info { display: flex; flex-direction: column; gap: .65rem; }
+    .sidebar-info { display: flex; flex-direction: column; gap: .8rem; }
 
     .info-item {
-      display: flex; align-items: flex-start; gap: .75rem;
+      display: flex; align-items: flex-start; gap: .8rem;
       color: rgba(246,242,234,.7);
-      font-size: clamp(1rem, 1.4vw, 1.1rem);
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
       line-height: 1.5;
     }
 
     .info-icon {
-      width: 17px; flex-shrink: 0; margin-top: .1rem;
+      width: 19px; flex-shrink: 0; margin-top: .1rem;
       opacity: .6;
     }
 
-    .contact-links { display: flex; flex-direction: column; gap: .6rem; }
+    .contact-links { display: flex; flex-direction: column; gap: .75rem; }
 
     .contact-link {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: .8rem;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: clamp(1rem, 1.4vw, 1.1rem);
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
 
     .contact-link:hover { color: var(--gold-lt); }
 
-    .contact-link svg { width: 17px; opacity: .7; }
+    .contact-link svg { width: 19px; opacity: .7; }
 
     .sidebar-section-label {
-      font-size: clamp(.7rem, 1vw, .82rem);
+      font-size: clamp(.75rem, 1.1vw, .9rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
@@ -323,7 +323,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all .2s;
-      margin-left: 2rem;
+      margin-left: auto;
       flex-shrink: 0;
     }
 
