@@ -245,15 +245,31 @@
       line-height: 1.6;
     }
 
-    /* Publications placeholder */
-    .pub-placeholder {
-      border: 1px dashed var(--border);
-      padding: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1.8;
+    /* Publications */
+    .pub-category-label {
+      font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.2rem; margin-top: 2.5rem;
+      padding-bottom: .4rem; border-bottom: 1px solid var(--border);
     }
+    .pub-category-label:first-child { margin-top: 0; }
+    .pub-list { display: flex; flex-direction: column; gap: 2rem; }
+    .pub-item { display: grid; grid-template-columns: 12px 1fr; gap: 1.4rem; align-items: start; }
+    .pub-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--gold); margin-top: .55rem; flex-shrink: 0;
+    }
+    .pub-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 500; color: var(--navy); line-height: 1.45;
+    }
+    .pub-meta { font-size: .95rem; color: var(--muted); margin-top: .35rem; line-height: 1.6; }
+    .pub-links { display: flex; gap: 1rem; margin-top: .6rem; }
+    .pub-link {
+      font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px; transition: color .2s, border-color .2s;
+    }
+    .pub-link:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
 
     /* CV button */
     .btn {
@@ -642,9 +658,29 @@
       <!-- Publications -->
       <section id="publications" class="section">
         <p class="section-label">Publications</p>
-        <div class="pub-placeholder">
-          Working papers and publications forthcoming.<br>
-          Please <a href="mailto:slee275@buffalo.edu" style="color:var(--gold);text-decoration:none;">reach out by email</a> for drafts or current projects.
+
+        <p class="pub-category-label">Working Papers</p>
+        <div class="pub-list">
+          <div class="pub-item">
+            <div class="pub-dot"></div>
+            <div>
+              <div class="pub-title">"Pro Patria et America? Foreign Policy and Civil-Military Relations"</div>
+              <div class="pub-meta">Working Paper · Available upon request</div>
+              <div class="pub-links">
+                <a href="mailto:slee275@buffalo.edu" class="pub-link">Request Draft</a>
+              </div>
+            </div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-dot"></div>
+            <div>
+              <div class="pub-title">"To be or not to be: North Korea's Restrained Retaliation — A Game-Theoretic Model of Rubbish Balloon"</div>
+              <div class="pub-meta">Working Paper · Presented at International Studies Association 2026 Annual Convention · Columbus, OH · 2026</div>
+              <div class="pub-links">
+                <a href="mailto:slee275@buffalo.edu" class="pub-link">Request Draft</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
