@@ -77,22 +77,24 @@
       padding-top: 56px;
     }
 
-    /* Sidebar */
+    /* Sidebar — container-type lets child elements scale via cqi (% of sidebar width) */
     .sidebar {
+      container-type: inline-size;
       background: var(--navy);
-      padding: clamp(2rem, 5vw, 4rem) clamp(1.2rem, 3.5vw, 2.8rem);
+      padding: 8cqi 7cqi;
       display: flex;
       flex-direction: column;
-      gap: clamp(1rem, 2.5vw, 2rem);
+      gap: 5cqi;
       position: sticky;
       top: 56px;
       height: calc(100vh - 56px);
       overflow-y: auto;
     }
 
+    /* Avatar: 55% of sidebar width, naturally larger on wide screens */
     .avatar-wrap {
-      width: clamp(90px, 12vw, 130px);
-      height: clamp(90px, 12vw, 130px);
+      width: min(55cqi, 170px);
+      height: min(55cqi, 170px);
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--gold);
@@ -103,14 +105,14 @@
 
     .sidebar-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+      font-size: min(7.5cqi, 1.7rem);
       font-weight: 500;
       color: var(--ivory);
       line-height: 1.25;
     }
 
     .sidebar-title {
-      font-size: .8rem;
+      font-size: min(3.5cqi, .8rem);
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold-lt);
@@ -118,46 +120,46 @@
     }
 
     .sidebar-divider {
-      width: 40px; height: 1px;
+      width: 12cqi; height: 1px;
       background: var(--gold);
       opacity: .5;
     }
 
-    .sidebar-info { display: flex; flex-direction: column; gap: .65rem; }
+    .sidebar-info { display: flex; flex-direction: column; gap: 2cqi; }
 
     .info-item {
-      display: flex; align-items: flex-start; gap: .75rem;
+      display: flex; align-items: flex-start; gap: 3cqi;
       color: rgba(246,242,234,.7);
-      font-size: clamp(.78rem, 1.1vw, .95rem);
+      font-size: min(5cqi, .95rem);
       line-height: 1.5;
     }
 
     .info-icon {
-      width: clamp(14px, 1.4vw, 17px); flex-shrink: 0; margin-top: .1rem;
+      width: min(4.5cqi, 17px); flex-shrink: 0; margin-top: .1rem;
       opacity: .6;
     }
 
-    .contact-links { display: flex; flex-direction: column; gap: .6rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 2cqi; }
 
     .contact-link {
-      display: flex; align-items: center; gap: .7rem;
+      display: flex; align-items: center; gap: 3cqi;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: clamp(.78rem, 1.1vw, .95rem);
+      font-size: min(5cqi, .95rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
 
     .contact-link:hover { color: var(--gold-lt); }
 
-    .contact-link svg { width: clamp(13px, 1.3vw, 16px); opacity: .7; }
+    .contact-link svg { width: min(4.5cqi, 16px); opacity: .7; }
 
     .sidebar-section-label {
-      font-size: clamp(.62rem, .9vw, .75rem);
+      font-size: min(3.5cqi, .75rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
-      margin-bottom: .5rem;
+      margin-bottom: 1.5cqi;
     }
 
     /* Main content */
