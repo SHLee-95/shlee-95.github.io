@@ -37,10 +37,8 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: var(--navy);
       display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap;
-      padding: clamp(.5rem, 1.5vw, .8rem) clamp(1.2rem, 4vw, 3rem);
-      gap: .4rem;
-      min-height: 56px;
+      padding: 0 3rem;
+      height: 56px;
     }
 
     .nav-brand {
@@ -53,14 +51,13 @@
     }
 
     .nav-links {
-      display: flex; gap: clamp(.8rem, 2vw, 2.2rem); list-style: none;
-      flex-wrap: wrap;
+      display: flex; gap: 2.2rem; list-style: none;
     }
 
     .nav-links a {
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: clamp(.65rem, 1.2vw, .78rem);
+      font-size: .78rem;
       font-weight: 400;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -130,12 +127,12 @@
     .info-item {
       display: flex; align-items: flex-start; gap: 3cqi;
       color: rgba(246,242,234,.7);
-      font-size: min(5cqi, .95rem);
+      font-size: min(6cqi, 1.05rem);
       line-height: 1.5;
     }
 
     .info-icon {
-      width: min(4.5cqi, 17px); flex-shrink: 0; margin-top: .1rem;
+      width: min(5cqi, 18px); flex-shrink: 0; margin-top: .1rem;
       opacity: .6;
     }
 
@@ -145,17 +142,17 @@
       display: flex; align-items: center; gap: 3cqi;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: min(5cqi, .95rem);
+      font-size: min(6cqi, 1.05rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
 
     .contact-link:hover { color: var(--gold-lt); }
 
-    .contact-link svg { width: min(4.5cqi, 16px); opacity: .7; }
+    .contact-link svg { width: min(5cqi, 18px); opacity: .7; }
 
     .sidebar-section-label {
-      font-size: min(3.5cqi, .75rem);
+      font-size: min(4cqi, .82rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
@@ -441,6 +438,24 @@
     /* Single layout switch: 2-column → 1-column when viewport is too narrow */
     @media (max-width: 660px) {
       .hero { grid-template-columns: 1fr; }
+
+      nav {
+        padding: .6rem 1.2rem;
+        height: auto;
+        flex-wrap: wrap;
+        gap: .4rem;
+      }
+
+      .nav-links {
+        gap: .9rem;
+        flex-wrap: wrap;
+        order: 3;
+        width: 100%;
+        padding-bottom: .3rem;
+      }
+
+      .nav-links a { font-size: .65rem; }
+      .a11y-btn { margin-left: auto; }
 
       .sidebar {
         position: static;
