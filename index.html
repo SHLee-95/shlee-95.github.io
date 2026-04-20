@@ -85,8 +85,10 @@
       position: sticky;
       top: 56px;
       height: calc(100vh - 56px);
-      overflow-y: auto;
+      overflow-y: scroll;
+      scrollbar-width: none;
     }
+    .sidebar::-webkit-scrollbar { display: none; }
 
     .avatar-wrap {
       width: clamp(140px, 19vw, 210px);
