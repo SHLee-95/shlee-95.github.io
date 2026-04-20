@@ -37,9 +37,9 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: var(--navy);
       display: flex; align-items: center;
-      gap: 2.5rem;
-      padding: 0 3rem;
-      height: 56px;
+      justify-content: space-between;
+      padding: 0 clamp(1.2rem, 3vw, 3rem);
+      min-height: 56px;
     }
 
     .nav-brand {
@@ -52,7 +52,7 @@
     }
 
     .nav-links {
-      display: flex; gap: 2rem; list-style: none;
+      display: flex; gap: clamp(1rem, 2vw, 2rem); list-style: none;
     }
 
     .nav-links a {
@@ -108,7 +108,7 @@
     }
 
     .sidebar-title {
-      font-size: .85rem;
+      font-size: clamp(.9rem, 1.3vw, 1.05rem);
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--gold-lt);
@@ -126,7 +126,7 @@
     .info-item {
       display: flex; align-items: flex-start; gap: .8rem;
       color: rgba(246,242,234,.7);
-      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
       line-height: 1.5;
     }
 
@@ -141,7 +141,7 @@
       display: flex; align-items: center; gap: .8rem;
       color: rgba(246,242,234,.65);
       text-decoration: none;
-      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
       letter-spacing: .04em;
       transition: color .2s;
     }
@@ -151,7 +151,7 @@
     .contact-link svg { width: 19px; opacity: .7; }
 
     .sidebar-section-label {
-      font-size: clamp(.75rem, 1.1vw, .9rem);
+      font-size: clamp(.85rem, 1.2vw, 1rem);
       letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(246,242,234,.3);
@@ -323,7 +323,6 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all .2s;
-      margin-left: auto;
       flex-shrink: 0;
     }
 
